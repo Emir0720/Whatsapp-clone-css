@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600;700&display_swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#009688 0%, #009688 130px, #f1f3ee 130px, #f1f3ee 100%);
+}
+
+.container {
+    position: relative;
+    width: 1396px;
+    max-width: 100%;
+    margin-top: 40px;
+    height: calc(100vh - 80px);
+    background-color: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06),0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    display: flex;
+}
+
+.container .leftSide {
+    position: relative;
+    flex: 30%;
+    background-color: #fff;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.container .rightSide {
+    position: relative;
+    flex: 70%;
+    background: #e5ddd5;
+}
+.container .rightSide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://external-preview.redd.it/rEwFriCkfAtjOb5b-23b4tGGVcuvfaBqamYNJrgxnLM.png?auto=webp&v=enabled&s=ccc67c374c42e194cca0045dd08f776d450a0489");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+} 
+
+.header{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: #ededed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userImg {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 15px;
+
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nav_icons {
+    display: flex;
+    margin-right: 15px;
+}
+
+.nav_icons li {
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+    color: #51585c;
+    margin-left: 22px;
+}
+.searchChat {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchChat div {
+    width: 90%;
+}
+.searchChat div input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: #fff;
+    padding: 6px;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 14px;
+    padding-left: 40px;
+}
+.searchChat div input::placeholder {
+    color: #bbb;
+}
+.searchChat div i {
+    position: absolute;
+    left: 35px;
+    top: 15px;
+    font: 1.2em;
+    color: #51585c;
+
+}
+
+.chatList {
+    position: relative;
+    height: calc(100% - 110px);
+    overflow-y: auto;
+}
+
+.chatList .block{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+
+}
+.chatList .block.active {
+    background: #ebebeb;
+}
+
+.chatList .block:hover {
+    background: #f5f5f5;
+}
+
+.chatList .block .imgBox {
+    position: relative;
+    min-width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.chatList .block .details {
+    position: relative;
+    width: 100%;
+}
+
+.chatList .block .details .listHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.chatList .block .details .listHead h4 {
+    font-size: .9em;
+    font-weight: 600;
+    color: #111;
+}
+.chatList .block .details .listHead .time {
+    font-size: .7em;
+    color: #aaa;
+}
+
+.chatList .block.unread .details .listHead .time {
+    color: #06d755;
+}
+
+.message_p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.message_p p {
+    color: #aaa;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    font-size: .75em;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message_p b {
+    background-color: #06d755;
+    color: #fff;
+    font-size: .75em;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgText {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgText h4 {
+    font-weight: 400;
+    line-height: 1.2em;
+    margin-left: 15px;
+}
+.imgText h4 span {
+    font-size: .8em;
+    color: #555;
+}
+
+.chatBox {
+    position: relative;
+    height: calc(100% - 120px);
+    padding: 50px;
+    overflow-y: auto;
+}
+
+.message {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.message p {
+    position: relative;
+    right: 0;
+    text-align: right;
+    padding: 12px;
+    max-width: 65%;
+    background: #dcf8c6;
+    border-radius: 10px;
+    font-size: .9em;
+}
+
+.message p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #dcf8c6 0%, #dcf8c6 50%, transparent 50%, transparent);
+}
+
+ .message p span {
+    display: block;
+    margin-top: 5px;
+    font-size: .85em;
+    opacity: 0.5;
+}
+
+.my_message {
+    justify-content: flex-end;
+}
+
+.frnd_message {
+    justify-content: flex-start;
+}
+
+.frnd_message p {
+    background: #fff;
+    text-align: left;
+}
+
+.message.frnd_message p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(225deg, #fff 0%, #fff 50%, transparent 50%, transparent);
+}  
+
+.chatInput {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: #f0f0f0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatInput i {
+    cursor: pointer;
+    font-size: 1.4em;
+    color:#51585c ;
+}
+
+.chatInput i:nth-child(1){
+    margin-right: 15px;
+}
+
+.chatInput input {
+    position: relative;
+    width: 90%;
+    margin: 0 20px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1em;
+
+}
